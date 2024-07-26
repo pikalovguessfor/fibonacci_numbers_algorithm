@@ -1,18 +1,27 @@
 #include <iostream>								//include directive
 
-long fiboPlus(long f_num, long s_num) {			// function for calculate a fibo-numbers
+#define minusNull -1
 
-	long plus_num = f_num + s_num;
+long long fiboPlus(long long f_num,long long s_num) {			// function for calculate a fibo-numbers
+
+	long long plus_num = f_num + s_num;
 
 	return plus_num;							
 }
 
 int main() {									// main function
 
-	long f_num = 0;
-	long s_num = 1;
+	long long f_num = 0;
+	long long s_num = 1;
 
 	while (true) {								// infinite loop
+
+		if (f_num <= minusNull or s_num <= minusNull) {
+
+			f_num = 0;
+			s_num = 1;
+
+		}
 
 		f_num = fiboPlus(f_num, s_num);
 		s_num = fiboPlus(f_num, s_num);
